@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Capturing Gesture - {{ word }}</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body class="dark-mode use-bg-image">
+  <div class="overlay"></div>
+
+  <div class="container py-5 content-wrapper text-center">
+    <h1 class="typewriter">Capturing gesture for "{{ word }}"</h1>
+
+    <!-- ✅ Stream feed target -->
+    <div class="camera-frame shadow-lg mt-4 mx-auto" style="width: 640px;">
+
+      <img id="liveCaptureFeed"
+          src="/capture_feed?word={{ word }}"
+          style="width: 640px; height: 480px; background-color: #000; border-radius: 16px; display: block; margin: 0 auto;" />
+    </div>
+
+    <button id="cancelCaptureBtn"
+            style="position: fixed; bottom: 40px; right: 40px; background: rgba(255,255,255,0.1); color: white; border: none; border-radius: 100px; padding: 14px 24px; backdrop-filter: blur(4px); font-size: 1rem; cursor: pointer; transition: all 0.3s ease;">
+      ⛔ Cancel
+    </button>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
